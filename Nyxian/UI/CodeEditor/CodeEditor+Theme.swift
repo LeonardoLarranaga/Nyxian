@@ -325,7 +325,7 @@ class LDEThemeReader {
         }
     }
     
-    init() {
+    private init() {
         // Gaining plist access
         let path = "\(Bundle.main.bundlePath)/Shared/Themes/Themes.plist"
         if let data = try? Data(contentsOf: URL(fileURLWithPath: path)),

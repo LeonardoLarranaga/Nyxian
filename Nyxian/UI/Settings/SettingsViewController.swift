@@ -129,7 +129,7 @@ class SettingsViewController: UIThemedTableViewController {
             case 1:
                 return ApplicationManagementViewController.shared
             case 2:
-                return CustomizationViewController(style: .insetGrouped)
+                return CustomizationHostingController()
             case 3:
                 return CertificateController(style: .insetGrouped)
 #if DEBUG
@@ -145,7 +145,7 @@ class SettingsViewController: UIThemedTableViewController {
             case 0:
                 return ToolChainController(style: .insetGrouped)
             case 1:
-                return CustomizationViewController(style: .insetGrouped)
+                return CustomizationHostingController()
             case 2:
                 return CreditsViewController(style: .insetGrouped)
 #endif /* !JAILBREAK_ENV */

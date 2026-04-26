@@ -5,12 +5,27 @@ Thank you soooo much for your interest in Nyxian and contributing to it, I had t
 ## Getting Started
 
 ### Prerequisites
-- A mac with Xcode and Theos
+
+- A Mac with Xcode
 - A iPhone/iPad with iOS 16+
 - A free or paid apple developer account
 - The certificate used to sign Nyxian (you can get that from keychain after installing nyxian over Xcode).
 
+Install the required macOS build tools with:
+
+```bash
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Install OpenSSL, pkg-config, libarchive, cmake, and ninja
+brew install openssl@3 pkg-config libarchive cmake ninja
+# Install Theos
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
+# Export THEOS path for the current shell session
+export THEOS="$HOME/theos"
+```
+
 ### Setup
+
 1. Before you open Nyxian in Xcode **you have to run the Makefile first!**, otherwise you end up breaking project internal dependency configurations:
 
 ```bash
@@ -18,24 +33,30 @@ git clone --recursive https://github.com/ProjectNyxian/Nyxian.git
 cd Nyxian
 make jailed
 ```
+
 2. Open it in Xcode (Now you can enjoyyy)
 
 ## Ways to contribute
 
 ### Good First Issues
+
 You can find beginner friendly issues they are tagged with `good-first-issue`, they are beginner friendly.
 
 ### Documentation
+
 Improvements to docs, examples, comments are always warmly welcomed.
 
 ### Bug Reports
+
 Open an issue with:
+
 - What you expected
 - What happened
 - Steps to reproduce
 - Your environment (OS, version, etc)
 
 ### Feature Requests
+
 Open an issue describing the use case before writing code.
 
 ## Submiting changes
@@ -50,6 +71,7 @@ Open an issue describing the use case before writing code.
 ## Code Style
 
 ### Swift
+
 ```swift
 // Use [weak self] + guard in closures
 someAsyncThing { [weak self] result in
@@ -76,6 +98,7 @@ func doThing() {
 ```
 
 ### C / ObjC
+
 ```objc
 /* Allman braces for functions */
 void do_thing(int arg)
@@ -102,13 +125,16 @@ TaskPortObject *get_tpo_for_pid(pid_t pid);
 ```
 
 ### General
+
 - GPL v3 header on all new files
 - Minimal comments - code should be self-documenting
 - Defensive programming - check validity before operations (otherwise I will never ever again accept a PR from you)
 - No force unwraps in Swift unless provably safe
 
 ## License Header
+
 All files must include:
+
 ```
 /*
 Copyright (C) 2025 cr4zyengineer
@@ -129,7 +155,9 @@ You should have received a copy of the GNU General Public License
 along with Nyxian. If not, see <https://www.gnu.org/licenses/>.
 */
 ```
+
 You have to add your name undernethe the names of other people that have contributed in-case youre not in that list already. If you're the original creator of a new file in Nyxian then your name is the first instead of mine, I add mine underneath yours in that case when I add or change something of your code!
 
 ## Questions?
+
 Open an issue. Please search existing issues first.
